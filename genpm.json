@@ -1,0 +1,33 @@
+{
+  "$": 1,
+  "n": "@core/pricing",
+  "v": "1.0.0",
+  "s": {
+    "en": "Pricing from cost: markup rules by category/supplier/product, charm rounding, margin alerts and EU 30-day price history",
+    "es": "Precios desde el coste: reglas de margen por categoría/proveedor/producto, redondeo .99, alertas de margen e historial de 30 días UE",
+    "pt-BR": "Preços a partir do custo: regras de margem, arredondamento .99, alertas de margem e histórico de preços de 30 dias",
+    "fr": "Prix depuis le coût : règles de marge par catégorie/fournisseur/produit, arrondi .99, alertes de marge, historique 30 jours UE",
+    "de": "Preise aus Kosten: Aufschlagsregeln je Kategorie/Lieferant/Produkt, .99-Rundung, Margenwarnungen, EU-30-Tage-Preishistorie",
+    "ja": "原価からの価格設定：カテゴリ/仕入先/商品別の利益ルール、.99 丸め、利益率アラート、EU 30 日価格履歴",
+    "zh-CN": "基于成本定价：按分类/供应商/商品的加价规则、.99 取整、毛利预警和欧盟 30 天价格历史",
+    "ko": "원가 기반 가격: 카테고리/공급사/상품별 마진 규칙, .99 반올림, 마진 경고, EU 30일 가격 이력"
+  },
+  "d": "src/lib/pricing",
+  "l": "MIT",
+  "k": [
+    "ecommerce",
+    "pricing",
+    "margins",
+    "dropshipping",
+    "omnibus"
+  ],
+  "g": {
+    "@core/db": "^1.0.0",
+    "@core/catalog": "^1.0.0",
+    "@core/money": "^1.0.0",
+    "@core/contracts": "^1.0.0"
+  },
+  "p": {
+    "zod": "^4.0.0"
+  }
+}
