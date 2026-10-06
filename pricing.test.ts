@@ -1,12 +1,12 @@
 import { eq } from 'drizzle-orm';
 import { beforeEach, describe, expect, it } from 'vitest';
-import { createProduct, getProduct, upsertCategory } from '../catalog/index.js';
-import * as catalogSchema from '../catalog/schema.js';
-import type { AdminContext } from '../contracts/index.js';
-import { testDb } from '../db/__fixtures__/pglite.js';
-import type { Db } from '../db/index.js';
-import { money } from '../money/index.js';
-import * as schema from './schema.js';
+import { createProduct, getProduct, upsertCategory } from '../catalog/index.ts';
+import * as catalogSchema from '../catalog/schema.ts';
+import type { AdminContext } from '../contracts/index.ts';
+import { testDb } from '../db/__fixtures__/pglite.ts';
+import type { Db } from '../db/index.ts';
+import { money } from '../money/index.ts';
+import * as schema from './schema.ts';
 import {
   applyRule,
   honestCompareAt,
@@ -19,7 +19,7 @@ import {
   repriceProduct,
   setVariantPrice,
   upsertPriceRule,
-} from './index.js';
+} from './index.ts';
 
 let db: Db;
 const eur = (n: number) => money(n, 'EUR');

@@ -1,5 +1,5 @@
 // @core/pricing — API pública. Importa desde aquí.
-export { priceRulesAdminResource } from './admin.js';
+export { priceRulesAdminResource } from './admin.ts';
 export {
   applyRule,
   honestCompareAt,
@@ -14,5 +14,5 @@ export {
   ruleFor,
   setVariantPrice,
   upsertPriceRule,
-} from './pricing.js';
-export { type PriceRule, priceHistory, priceRules } from './schema.js';
+} from './pricing.ts';
+export { type PriceRule, priceHistory, priceRules } from './schema.ts';

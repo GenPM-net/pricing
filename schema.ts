@@ -1,7 +1,7 @@
 // Tablas de @core/pricing. Las recoge drizzle-kit vía src/lib/db/drizzle.config.ts.
 import { boolean, index, integer, pgTable, text, timestamp } from 'drizzle-orm/pg-core';
-import { productVariants } from '../catalog/index.js';
-import { primaryId, timestamps } from '../db/index.js';
+import { productVariants } from '../catalog/index.ts';
+import { primaryId, timestamps } from '../db/index.ts';
 
 export const priceRules = pgTable('price_rules', {
   id: primaryId('prr'),

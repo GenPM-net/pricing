@@ -1,11 +1,11 @@
 // Precio de venta desde el coste con reglas, cambios de precio con historial, "precio anterior" honesto y márgenes.
 import { and, asc, desc, eq, gt, isNull, lt, or } from 'drizzle-orm';
 import { z } from 'zod';
-import { categories, productCategories, productVariants, products } from '../catalog/index.js';
-import type { Money } from '../contracts/index.js';
-import { type Executor, getDb, withTransaction } from '../db/index.js';
-import { charmPrice, money } from '../money/index.js';
-import { type PriceRule, priceHistory, priceRules } from './schema.js';
+import { categories, productCategories, productVariants, products } from '../catalog/index.ts';
+import type { Money } from '../contracts/index.ts';
+import { type Executor, getDb, withTransaction } from '../db/index.ts';
+import { charmPrice, money } from '../money/index.ts';
+import { type PriceRule, priceHistory, priceRules } from './schema.ts';
 
 export const PriceRuleInput = z
   .object({

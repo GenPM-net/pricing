@@ -1,9 +1,9 @@
 // Panel: reglas de precio.
 import { asc, count, eq } from 'drizzle-orm';
-import type { AdminContext, AdminResource } from '../contracts/index.js';
-import { getDb } from '../db/index.js';
-import { PriceRuleInput, upsertPriceRule } from './pricing.js';
-import { type PriceRule, priceRules } from './schema.js';
+import type { AdminContext, AdminResource } from '../contracts/index.ts';
+import { getDb } from '../db/index.ts';
+import { PriceRuleInput, upsertPriceRule } from './pricing.ts';
+import { type PriceRule, priceRules } from './schema.ts';
 
 class PricingForbidden extends Error {
   readonly code = 'forbidden';
