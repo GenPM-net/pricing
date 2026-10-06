@@ -36,6 +36,9 @@ describe('rules', () => {
     expect(applyRule(eur(720), { markupBps: 15000, fixedAdd: 0, rounding: '.99' })).toEqual(eur(1899)); // 18,00 → 18,99
     expect(applyRule(eur(720), { markupBps: 15000, fixedAdd: 0, rounding: 'none' })).toEqual(eur(1800));
     expect(applyRule(eur(1000), { markupBps: 10000, fixedAdd: 150, rounding: '.95' })).toEqual(eur(2195));
+    // Monedas sin decimales: el redondeo nunca deja el precio por debajo del calculado (ni del coste).
+    expect(applyRule(money(50, 'JPY'), { markupBps: 10000, fixedAdd: 0, rounding: '.99' })).toEqual(money(109, 'JPY'));
+    expect(applyRule(money(100, 'JPY'), { markupBps: 0, fixedAdd: 0, rounding: '.99' }).amount).toBeGreaterThanOrEqual(100);
     expect(marginBps(2000, 1500)).toBe(2500);
     expect(marginBps(1000, 1200)).toBe(-2000);
   });
