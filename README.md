@@ -23,6 +23,24 @@ cost range, markup in basis points, fixed add-on, charm rounding, minimum margin
 match; `repriceProduct` applies them to variants with a cost. Every price change goes to `price_history`, which gives
 the EU "prior price" (lowest of the 30 days before the current price) for any sale badge. Tables: `price_rules`, `price_history`.
 
+## Setup
+
+After `genpm add`, follow these steps (your AI agent finds the same steps in `src/lib/pricing/AGENTS.md` and can do them for you):
+
+1. Migrations as in `src/lib/db/AGENTS.md`.
+2. Create rules in the admin (`priceRulesAdminResource` in `src/genpm/admin.ts`, permissions `pricing:read|update`), e.g. `markupBps: 15000` (+150 %), rounding `.99`.
+3. Change prices only with `setVariantPrice(variantId, amount)` (also from the admin and supplier syncs) so history is kept.
+4. Product pages: show a crossed-out price only with `honestCompareAt(variantId)`; never with a typed "compare at".
+5. Simulate before applying: `repriceProduct(productId, { apply: false })` returns old/new price and margin per variant.
+6. Verify: lower a price, `honestCompareAt` returns the lowest price of the previous 30 days.
+
+## What's inside
+
+Paths are relative to `src/lib/pricing`.
+
+- `index.ts` — public API: `upsertPriceRule`, `priceFromCost`, `applyRule`, `repriceProduct`, `setVariantPrice`, `priorPrice`, `honestCompareAt`, `lowMarginVariants`, `priceRulesAdminResource`.
+- `pricing.ts` — logic. `admin.ts` — admin resource. `schema.ts` — tables.
+
 ## At a glance
 
 - **GenPM dependencies** (installed with it): [@core/db](https://genpm.net/p/@core/db), [@core/catalog](https://genpm.net/p/@core/catalog), [@core/money](https://genpm.net/p/@core/money), [@core/contracts](https://genpm.net/p/@core/contracts)

@@ -1,7 +1,7 @@
 {
   "$": 1,
   "n": "@core/pricing",
-  "v": "1.0.0",
+  "v": "1.0.1",
   "s": {
     "en": "Pricing from cost: markup rules by category/supplier/product, charm rounding, margin alerts and EU 30-day price history",
     "es": "Precios desde el coste: reglas de margen por categoría/proveedor/producto, redondeo .99, alertas de margen e historial de 30 días UE",
